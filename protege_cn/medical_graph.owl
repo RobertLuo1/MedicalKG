@@ -1,0 +1,5782 @@
+@prefix : <http://www.semanticweb.org/hp/ontologies/2022/medical#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/hp/ontologies/2022/medical> .
+
+<http://www.semanticweb.org/hp/ontologies/2022/medical> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#好评药品
+:好评药品 rdf:type owl:ObjectProperty ;
+      rdfs:domain :疾病 ;
+      rdfs:range :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#宜吃
+:宜吃 rdf:type owl:ObjectProperty ;
+    rdfs:domain :疾病 ;
+    rdfs:range :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#属于
+:属于 rdf:type owl:ObjectProperty ;
+    rdfs:domain :二级科室 ;
+    rdfs:range :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#常用药品
+:常用药品 rdf:type owl:ObjectProperty ;
+      rdfs:domain :疾病 ;
+      rdfs:range :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#并发症
+:并发症 rdf:type owl:ObjectProperty ;
+     rdfs:domain :疾病 ;
+     rdfs:range :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#忌吃
+:忌吃 rdf:type owl:ObjectProperty ;
+    rdfs:domain :疾病 ;
+    rdfs:range :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#所属科室
+:所属科室 rdf:type owl:ObjectProperty ;
+      rdfs:domain :疾病 ;
+      rdfs:range :二级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#推荐食谱
+:推荐食谱 rdf:type owl:ObjectProperty ;
+      rdfs:domain :疾病 ;
+      rdfs:range :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#治疗方法
+:治疗方法 rdf:type owl:ObjectProperty ;
+      rdfs:domain :疾病 ;
+      rdfs:range :治疗方案 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#生产药品
+:生产药品 rdf:type owl:ObjectProperty ;
+      rdfs:domain :生产商 ;
+      rdfs:range :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#症状
+:症状 rdf:type owl:ObjectProperty ;
+    rdfs:domain :疾病 ;
+    rdf:type owl:Class ;
+    rdfs:range :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#诊断检查
+:诊断检查 rdf:type owl:ObjectProperty ;
+      rdfs:domain :疾病 ;
+      rdfs:range :检测手段 .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#一级科室
+:一级科室 rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#二级科室
+:二级科室 rdf:type owl:Class ;
+      rdfs:subClassOf :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#检测手段
+:检测手段 rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#治疗方案
+:治疗方案 rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#生产商
+:生产商 rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#疾病
+:疾病 rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#症状
+:症状 rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#药物
+:药物 rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#食物
+:食物 rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#食谱
+:食谱 rdf:type owl:Class ;
+    rdfs:subClassOf :食物 .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#A-V综合征
+:A-V综合征 rdf:type owl:NamedIndividual ,
+                 :治疗方案 ,
+                 :疾病 ;
+        :好评药品 :注射用A型肉毒毒素 ;
+        :宜吃 :桃仁 ,
+            :腰果 ,
+            :莲子 ,
+            :鸭肝 ;
+        :常用药品 :注射用A型肉毒毒素 ;
+        :并发症 :眼病 ;
+        :忌吃 :白酒 ,
+            :绿豆 ,
+            :面肥 ,
+            :黑豆 ;
+        :所属科室 :眼科 ;
+        :推荐食谱 :桃仁红枣粥 ,
+              :白芍麦枣粥 ,
+              :芝麻桃仁粥 ;
+        :治疗方法 :手术治疗 ,
+              :支持性治疗 ,
+              :药物治疗 ;
+        :症状 :下颌角外翻 ,
+            :内斜A征 ,
+            :外斜A征 ,
+            :外斜V征 ,
+            :眼球内陷 ;
+        :诊断检查 :裸眼检查法 ,
+              :视力 ,
+              :视野检查 ,
+              :角膜映光法 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#ADH分泌过多综合征
+:ADH分泌过多综合征 rdf:type owl:NamedIndividual ,
+                     :治疗方案 ,
+                     :疾病 ;
+            :好评药品 :呋噻米片 ,
+                  :呋塞米注射液 ,
+                  :呋塞米片 ,
+                  :托伐普坦片 ,
+                  :注射用呋塞米 ,
+                  :注射用布美他尼 ,
+                  :浓氯化钠注射液 ;
+            :宜吃 :白砂糖 ,
+                :糖桂花 ,
+                :蜂蜜 ,
+                :鸡蛋 ;
+            :常用药品 :呋塞米注射液 ,
+                  :呋塞米片 ;
+            :并发症 :昏迷 ;
+            :忌吃 :咸鸭蛋 ,
+                :白扁豆 ,
+                :白酒 ,
+                :腐竹 ;
+            :所属科室 :内分泌科 ;
+            :推荐食谱 :山药桂圆粥 ,
+                  :糯米莲藕 ,
+                  :红豆莲藕粥 ;
+            :治疗方法 :支持性治疗 ,
+                  :药物治疗 ;
+            :症状 :低钠血症 ,
+                :恶心 ,
+                :惊厥 ,
+                :昏迷 ,
+                :食欲不振 ;
+            :诊断检查 :尿常规 ,
+                  :肾功能检查 ,
+                  :血液生化六项检查 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#Alagille综合征
+:Alagille综合征 rdf:type owl:NamedIndividual ,
+                      :治疗方案 ,
+                      :疾病 ;
+             :好评药品 :维生素E皇浆口服液 ;
+             :常用药品 :维生素E皇浆口服液 ;
+             :并发症 :黄疸 ;
+             :所属科室 :消化内科 ;
+             :治疗方法 :支持性治疗 ,
+                   :药物治疗 ;
+             :症状 :智力发育迟缓 ,
+                 :血浆胆固醇水平高 ;
+             :诊断检查 :尿常规 ,
+                   :心血管造影 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#Asperger综合征
+:Asperger综合征 rdf:type owl:NamedIndividual ,
+                      :治疗方案 ,
+                      :疾病 ;
+             :宜吃 :荸荠粉 ,
+                 :鸡心 ,
+                 :鸡肉 ,
+                 :鹅肉 ;
+             :并发症 :言语和语言发育障碍 ;
+             :忌吃 :干腌菜 ,
+                 :螺丝菜 ,
+                 :鸭肉 ,
+                 :鸭蛋 ;
+             :所属科室 :心理科 ;
+             :推荐食谱 :冬菇椰菜豆腐粉丝汤 ,
+                   :牛奶菠菜粥 ,
+                   :猪肉青菜粥 ,
+                   :菠菜豆腐汤 ,
+                   :酥黄菜 ,
+                   :雪菜肉末粥 ,
+                   :香菇油菜面筋粥 ,
+                   :香菜莲藕饺 ;
+             :治疗方法 :药物治疗 ;
+             :症状 :精神障碍 ,
+                 :语言发育迟缓 ;
+             :诊断检查 :脑脊液细胞学检查 ,
+                   :脑脊液细胞计数 ,
+                   :脑脊液细菌培养 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#Austin型幼儿脑硫脂病
+:Austin型幼儿脑硫脂病 rdf:type owl:NamedIndividual ,
+                        :治疗方案 ,
+                        :疾病 ;
+               :好评药品 :扑米酮片 ,
+                     :盐酸苯海拉明注射液 ,
+                     :盐酸苯海索片 ,
+                     :盐酸金刚烷胺片 ;
+               :宜吃 :芝麻 ,
+                   :鸡肉 ,
+                   :鸡肝 ,
+                   :鸭肉 ;
+               :常用药品 :盐酸苯海索片 ,
+                     :盐酸金刚烷胺片 ;
+               :并发症 :共济失调 ;
+               :忌吃 :咸鸭蛋 ,
+                   :白酒 ,
+                   :芝麻 ,
+                   :花生仁（炸） ;
+               :所属科室 :风湿免疫科 ;
+               :推荐食谱 :莼菜虾羹汤 ,
+                     :香菇粥 ,
+                     :鳗鱼粥 ,
+                     :鸡肝粥 ;
+               :治疗方法 :康复治疗 ,
+                     :药物治疗 ;
+               :症状 :共济失调 ,
+                   :反应迟钝 ,
+                   :烦躁不安 ,
+                   :痉挛性截瘫步态 ;
+               :诊断检查 :尿液分析 ,
+                     :血常规 ,
+                     :血液生化六项检查 ,
+                     :颅脑CT检查 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#A链球菌群感染
+:A链球菌群感染 rdf:type owl:NamedIndividual ,
+                  :治疗方案 ,
+                  :疾病 ;
+         :好评药品 :乳酸左氧氟沙星片 ,
+               :盐酸环丙沙星片 ,
+               :盐酸金刚烷胺片 ,
+               :阿奇霉素分散片 ;
+         :宜吃 :核桃 ,
+             :绿豆面 ,
+             :芝麻 ,
+             :青豆 ;
+         :常用药品 :乳酸左氧氟沙星片 ,
+               :阿奇霉素分散片 ;
+         :并发症 :急性咽炎 ;
+         :忌吃 :咸鸭蛋 ,
+             :花生仁（炸） ,
+             :鸡肉 ,
+             :鸡蛋黄 ;
+         :所属科室 :传染科 ;
+         :推荐食谱 :双菇番茄黄瓜紫菜汤 ,
+               :大白菜饺 ,
+               :牛奶菠菜粥 ,
+               :白菜包子 ,
+               :素炒西兰花 ,
+               :紫菜豆腐汤 ,
+               :菠菜粥 ,
+               :鲜百合冬菇西兰花汤 ;
+         :治疗方法 :支持性治疗 ,
+               :药物治疗 ;
+         :症状 :丹毒 ,
+             :低血压 ,
+             :反应迟钝 ,
+             :肺部感染 ,
+             :腹膜炎 ,
+             :败血症 ;
+         :诊断检查 :周围血白细胞计数及分类检验 ,
+               :尿常规 ,
+               :涂片 ,
+               :细菌学检验 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#Barrett食管
+:Barrett食管 rdf:type owl:NamedIndividual ,
+                    :治疗方案 ,
+                    :疾病 ;
+           :好评药品 :大黄碳酸氢钠片 ,
+                 :奥美拉唑肠溶片 ,
+                 :奥美拉唑肠溶胶囊 ,
+                 :盐酸雷尼替丁胶囊 ,
+                 :碳酸氢钠片 ;
+           :宜吃 :南瓜子仁 ,
+               :栗子（熟） ,
+               :鸡蛋 ,
+               :鹿肉 ;
+           :常用药品 :奥美拉唑肠溶胶囊 ,
+                 :盐酸雷尼替丁胶囊 ;
+           :并发症 :食管狭窄 ;
+           :忌吃 :杏仁 ,
+               :白扁豆 ,
+               :白酒 ,
+               :鸡肝 ;
+           :所属科室 :消化内科 ;
+           :推荐食谱 :百合鸡蛋黄汤 ,
+                 :鱼肉鸡蛋汤 ,
+                 :鸡蛋米汤粥 ;
+           :治疗方法 :康复治疗 ,
+                 :手术治疗 ,
+                 :药物治疗 ;
+           :症状 :便血 ,
+               :吞咽困难 ,
+               :恶心与呕吐 ,
+               :烧心 ,
+               :胸骨后疼痛 ;
+           :诊断检查 :上消化道X线钡餐 ,
+                 :胃钡餐造影 ,
+                 :脱落细胞检查 ,
+                 :食管钡餐透视 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#Bazin硬红斑
+:Bazin硬红斑 rdf:type owl:NamedIndividual ,
+                   :治疗方案 ,
+                   :疾病 ;
+          :好评药品 :三乙醇胺乳膏 ,
+                :复方四环素泼尼松膜 ,
+                :注射用甲泼尼龙琥珀酸钠 ,
+                :甲泼尼龙片 ,
+                :肝素钠维E乳膏 ,
+                :门冬氨酸钙口服溶液 ;
+          :宜吃 :乌骨鸡 ,
+              :栗子（熟） ,
+              :核桃 ,
+              :白果（鲜） ;
+          :常用药品 :注射用甲泼尼龙琥珀酸钠 ,
+                :甲泼尼龙片 ;
+          :并发症 :血管炎 ;
+          :忌吃 :咸鸭蛋 ,
+              :花生仁（炸） ,
+              :豆浆 ,
+              :鹅肉 ;
+          :所属科室 :皮肤科 ;
+          :推荐食谱 :川贝杏仁银耳羹 ,
+                :红枣银耳粥 ,
+                :银耳瘦肉羹 ,
+                :银耳百合粥 ,
+                :鲜蘑黄瓜汤 ,
+                :黄瓜拌粉皮 ,
+                :黄瓜木耳汤 ;
+          :治疗方法 :支持性治疗 ,
+                :药物治疗 ;
+          :症状 :紧张 ,
+              :虚火 ;
+          :诊断检查 :免疫病理检查 ,
+                :皮肤涂片显微镜检查 ,
+                :细胞组织化学染色 ,
+                :血涂片 ,
+                :血管镜 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#Behcet病
+:Behcet病 rdf:type owl:NamedIndividual ,
+                  :治疗方案 ,
+                  :疾病 ;
+         :好评药品 :双花百合片 ,
+               :狼疮丸 ,
+               :雷公藤多甙片 ,
+               :雷公藤多苷片 ;
+         :宜吃 :松子仁 ,
+             :腰果 ,
+             :芝麻 ,
+             :鸭肝 ;
+         :常用药品 :雷公藤多甙片 ,
+               :雷公藤多苷片 ;
+         :并发症 :视网膜血管炎 ;
+         :忌吃 :干腌菜 ,
+             :海蜇皮 ,
+             :白扁豆 ,
+             :白酒 ;
+         :所属科室 :风湿免疫科 ;
+         :推荐食谱 :百合薏米绿豆粥 ,
+               :绿豆奶粥 ,
+               :绿豆薏米露 ,
+               :香菇薏米饭 ;
+         :治疗方法 :支持性治疗 ,
+               :药物治疗 ;
+         :症状 :传导阻滞 ,
+             :创伤 ,
+             :抽搐 ,
+             :痤疮样皮疹 ;
+         :诊断检查 :免疫学检测 ,
+               :心电图 ,
+               :肠镜 ,
+               :肾功能检查 ,
+               :血常规 ,
+               :血管造影 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#Brenneman综合征
+:Brenneman综合征 rdf:type owl:NamedIndividual ,
+                       :治疗方案 ,
+                       :疾病 ;
+              :宜吃 :南瓜子仁 ,
+                  :栗子（熟） ,
+                  :芝麻 ,
+                  :鹿肉 ;
+              :并发症 :腹膜后淋巴结炎 ;
+              :忌吃 :啤酒 ,
+                  :白酒 ,
+                  :鸡肝 ,
+                  :鸭血（白鸭） ;
+              :所属科室 :消化内科 ;
+              :推荐食谱 :百合莲子绿豆粥 ,
+                    :绿豆粥 ,
+                    :荸荠粥 ,
+                    :银耳绿豆粥 ;
+              :治疗方法 :对症治疗 ,
+                    :康复治疗 ,
+                    :药物治疗 ;
+              :症状 :下腹部反跳痛 ,
+                  :发烧 ,
+                  :右下腹痛 ,
+                  :咽痛 ,
+                  :恶心 ,
+                  :脐周疼痛 ,
+                  :腹痛 ;
+              :诊断检查 :腹部CT ,
+                    :腹部MRI检查 ,
+                    :腹部平片 ,
+                    :血常规 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#B疱疹病毒感染
+:B疱疹病毒感染 rdf:type owl:NamedIndividual ,
+                  :治疗方案 ,
+                  :疾病 ;
+         :好评药品 :诺氟沙星胶囊 ;
+         :宜吃 :南瓜子仁 ,
+             :芝麻 ,
+             :鸡肉 ,
+             :鸡蛋 ;
+         :常用药品 :诺氟沙星胶囊 ;
+         :并发症 :头痛 ;
+         :忌吃 :啤酒 ,
+             :田螺 ,
+             :白酒 ,
+             :鸭血（白鸭） ;
+         :所属科室 :皮肤科 ;
+         :推荐食谱 :三鲜苦瓜汤 ,
+               :猪腰薏仁粥 ,
+               :紫米薏仁粥 ,
+               :苦瓜瘦肉汤 ,
+               :苦瓜粥 ,
+               :苦瓜豆浆汁 ,
+               :薏仁粥 ,
+               :鸡蛋炒面 ;
+         :治疗方法 :中医治疗 ,
+               :支持性治疗 ;
+         :症状 :口咽部水疱状损害 ,
+             :疱疹 ,
+             :疲劳 ,
+             :肌痛 ;
+         :诊断检查 :免疫病理检查 ,
+               :皮肤涂片显微镜检查 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#B链球菌群感染
+:B链球菌群感染 rdf:type owl:NamedIndividual ,
+                  :治疗方案 ,
+                  :疾病 ;
+         :好评药品 :依托红霉素片 ,
+               :头孢丙烯分散片 ,
+               :头孢呋辛酯干混悬剂 ,
+               :头孢拉定分散片 ,
+               :头孢拉定胶囊 ,
+               :川贝枇杷糖浆 ,
+               :感冒清胶囊 ,
+               :抗病毒口服液 ,
+               :氨咖黄敏胶囊 ,
+               :洛索洛芬钠胶囊 ,
+               :消炎片 ,
+               :热毒宁注射液 ,
+               :盐酸氨溴索分散片 ,
+               :穿心莲片 ,
+               :蛇胆川贝液 ,
+               :通宣理肺丸 ,
+               :酚咖片 ,
+               :银芩胶囊 ,
+               :阿莫西林颗粒 ,
+               :风油精 ;
+         :宜吃 :白果（干） ,
+             :白果（鲜） ,
+             :鸡蛋 ,
+             <http://www.semanticweb.org/hp/ontologies/2022/medical#鸭血(白鸭)> ;
+         :常用药品 :川贝枇杷糖浆 ,
+               :盐酸氨溴索分散片 ;
+         :并发症 :败血症 ;
+         :忌吃 :啤酒 ,
+             :白酒 ,
+             :鸡肝 ,
+             :鹿肉 ;
+         :所属科室 :血液科 ;
+         :推荐食谱 :干烧黄豆芽 ,
+               :素炒圆白菜 ,
+               :菠菜炒粉丝 ,
+               :菠菜粥 ,
+               :酸奶煮羊排 ,
+               :香蕉豆沙酸奶汁 ,
+               :黄豆小米粥 ,
+               :黄豆芽蘑菇汤 ;
+         :治疗方法 :支持治疗 ,
+               :药物治疗 ;
+         :症状 :细菌感染 ,
+             :肺部感染 ,
+             :脑膜炎 ,
+             :脓肿 ,
+             :败血症 ;
+         :诊断检查 :抗链球菌激酶试验 ,
+               :血常规 ,
+               <http://www.semanticweb.org/hp/ontologies/2022/medical#抗溶血性链球菌“O”试验> .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#C5功能不全综合征
+:C5功能不全综合征 rdf:type owl:NamedIndividual ,
+                    :治疗方案 ,
+                    :疾病 ;
+           :好评药品 :复方炉甘石外用散 ,
+                 :复方苦木消炎分散片 ,
+                 :氯霉素片 ,
+                 :诺氟沙星胶囊 ;
+           :宜吃 :核桃 ,
+               :莲子 ,
+               :青豆 ,
+               :鸭翅 ;
+           :常用药品 :氯霉素片 ,
+                 :诺氟沙星胶囊 ;
+           :并发症 :化脓性脑膜炎 ;
+           :忌吃 :啤酒 ,
+               :绿豆 ,
+               :赤小豆 ,
+               :黑豆 ;
+           :所属科室 :血液科 ;
+           :推荐食谱 :山药粥 ,
+                 :山药蛋黄粥 ,
+                 :猪肚粥 ,
+                 :白扁豆粥 ,
+                 :苹果汁 ,
+                 :荔枝粥 ;
+           :治疗方法 :中医治疗 ,
+                 :支持性治疗 ;
+           :症状 :消瘦 ,
+               :腹泻 ;
+           :诊断检查 :血清总补体 ,
+                 :血清补体C5含量 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#CD30阳性皮肤T细胞淋巴瘤
+:CD30阳性皮肤T细胞淋巴瘤 rdf:type owl:NamedIndividual ,
+                         :治疗方案 ,
+                         :疾病 ;
+                :好评药品 :六甲蜜胺胶囊 ,
+                      :地塞米松片 ,
+                      :复方斑蝥胶囊 ,
+                      :复方环磷酰胺片 ,
+                      :注射用盐酸平阳霉素 ,
+                      :消癌平片 ,
+                      :苯丁酸氮芥片 ,
+                      :醋酸地塞米松片 ,
+                      :醋酸泼尼松片 ;
+                :宜吃 :莲子 ,
+                    :鸡蛋 ,
+                    :鸭翅 ,
+                    :黑芝麻 ;
+                :常用药品 :苯丁酸氮芥片 ,
+                      :醋酸泼尼松片 ;
+                :忌吃 :啤酒 ,
+                    :绿豆 ,
+                    :赤小豆 ,
+                    :黑豆 ;
+                :所属科室 :肿瘤外科 ;
+                :推荐食谱 :枸杞菜猪肝瘦肉汤 ,
+                      :猪肉枸杞汤 ,
+                      :羊骨粥 ;
+                :治疗方法 :支持性治疗 ,
+                      :药物治疗 ;
+                :症状 :组织细胞增生 ,
+                    :结节 ;
+                :诊断检查 :免疫病理检查 ,
+                      :涂片 ,
+                      :皮损 ,
+                      :细胞组织化学染色 ,
+                      :肿瘤标志物检测 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#CM1神经节苷脂贮积症
+:CM1神经节苷脂贮积症 rdf:type owl:NamedIndividual ,
+                      :治疗方案 ,
+                      :疾病 ;
+             :好评药品 :九味益脑颗粒 ,
+                   :参志胶囊 ,
+                   :宁心益智胶囊 ,
+                   :盐酸赖氨酸葡萄糖注射液 ;
+             :常用药品 :参志胶囊 ,
+                   :宁心益智胶囊 ;
+             :并发症 :呼吸道感染 ;
+             :所属科室 :风湿免疫科 ;
+             :治疗方法 :支持性治疗 ,
+                   :药物治疗 ;
+             :症状 :共济失调 ,
+                 :反应迟钝 ,
+                 :口齿不清 ,
+                 :心动过速 ,
+                 :抽风 ,
+                 <http://www.semanticweb.org/hp/ontologies/2022/medical#眼底黄斑部的樱...> ,
+                 :短颈 ,
+                 :肝脾肿大 ,
+                 :腱反射亢进 ,
+                 :表情淡漠 ;
+             :诊断检查 :尿常规 ,
+                   :尿液分析 ,
+                   :脊柱椎体平扫 ,
+                   :脑电图检查 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#CT检查
+:CT检查 rdf:type owl:NamedIndividual ,
+               :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#Castleman病
+:Castleman病 rdf:type owl:NamedIndividual ,
+                     :治疗方案 ,
+                     :疾病 ;
+            :好评药品 :复方双花口服液 ,
+                  :天蚕片 ,
+                  :清热散结片 ,
+                  :清热散结胶囊 ,
+                  :磷霉素钙片 ,
+                  :蒲地蓝消炎片 ,
+                  :西黄丸 ,
+                  :西黄胶囊 ,
+                  :解毒散结胶囊 ,
+                  <http://www.semanticweb.org/hp/ontologies/2022/medical#1/4分散片> ;
+            :宜吃 :栗子（熟） ,
+                :猫肉 ,
+                :莲子 ,
+                :鸭翅 ;
+            :常用药品 :西黄丸 ,
+                  :阿莫西林克拉维酸钾分散片 ;
+            :并发症 :紫癜 ;
+            :忌吃 :啤酒 ,
+                :绿豆 ,
+                :赤小豆 ,
+                :黑豆 ;
+            :所属科室 :血液科 ;
+            :推荐食谱 :栗子山楂羹 ,
+                  :桂圆栗子粥 ,
+                  :桑椹膏 ;
+            :治疗方法 :康复治疗 ,
+                  :药物治疗 ;
+            :症状 :低热 ,
+                :淋巴结肿大 ,
+                :肝脾肿大 ,
+                :角膜炎 ;
+            :诊断检查 :尿常规 ,
+                  :心电图 ,
+                  :抗人球蛋白试验 ,
+                  :浆细胞 ,
+                  :类风湿因子 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#Chance骨折
+:Chance骨折 rdf:type owl:NamedIndividual ,
+                   :治疗方案 ,
+                   :疾病 ;
+          :好评药品 :三七片 ,
+                :云南白药 ,
+                :伤科跌打丸 ,
+                :伤科跌打片 ,
+                :伸筋丹胶囊 ,
+                :双虎肿痛宁 ,
+                :复方三七胶囊 ,
+                :复方骨肽注射液 ,
+                :接骨七厘片 ,
+                :灵仙跌打片 ,
+                :独一味片 ,
+                :独一味软胶囊 ,
+                :舒筋活血片 ,
+                :舒筋活血胶囊 ,
+                :跌打丸 ,
+                :跌打损伤丸 ,
+                :骨松宝胶囊 ,
+                :骨炎灵片 ,
+                :骨肽片 ,
+                :鹿瓜多肽注射液 ,
+                :麝香接骨胶囊 ,
+                <http://www.semanticweb.org/hp/ontologies/2022/medical#8-11> ;
+          :宜吃 :泥胡菜 ,
+              :莲子 ,
+              :鸡蛋 ,
+              :鸭翅 ;
+          :常用药品 :云南白药 ,
+                :独一味片 ;
+          :并发症 :肿胀 ;
+          :忌吃 :啤酒 ,
+              :绿豆 ,
+              :赤小豆 ,
+              :黑豆 ;
+          :所属科室 :骨外科 ;
+          :推荐食谱 :三吃海蟹 ,
+                :炝泥胡菜 ,
+                :豉椒炒海蟹 ,
+                :酱爆海蟹 ;
+          :治疗方法 :康复治疗 ,
+                :支持性治疗 ;
+          :症状 :内出血 ,
+              :椎节分裂 ;
+          :诊断检查 :CT检查 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#Creutzfeldt-Jakob病
+:Creutzfeldt-Jakob病 rdf:type owl:NamedIndividual ,
+                             :治疗方案 ,
+                             :疾病 ;
+                    :好评药品 :九味益脑颗粒 ,
+                          :参志胶囊 ,
+                          :宁心益智胶囊 ,
+                          :盐酸赖氨酸葡萄糖注射液 ;
+                    :常用药品 :参志胶囊 ,
+                          :宁心益智胶囊 ;
+                    :并发症 :昏迷 ;
+                    :所属科室 :神经内科 ;
+                    :治疗方法 :支持性治疗 ,
+                          :药物治疗 ;
+                    :症状 :失眠 ,
+                        :抑郁 ,
+                        :持续性疼痛 ,
+                        :痴呆 ,
+                        :进行性痴呆 ;
+                    :诊断检查 :神经系统核医学检查 ,
+                          :神经系统检查 ,
+                          :脑电图检查 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#DF-2败血症的皮肤表现
+:DF-2败血症的皮肤表现 rdf:type owl:NamedIndividual ,
+                       :治疗方案 ,
+                       :疾病 ;
+              :好评药品 :乳酸左氧氟沙星分散片 ,
+                    :乳酸左氧氟沙星片 ,
+                    :头孢羟氨苄颗粒 ,
+                    :安宫牛黄丸 ,
+                    :左氧氟沙星片 ,
+                    :替硝唑胶囊 ,
+                    :氧氟沙星片 ,
+                    :氨苄西林胶囊 ,
+                    :注射用头孢唑林钠 ,
+                    :盐酸克林霉素棕榈酸酯分散片 ,
+                    :盐酸左氧氟沙星胶囊 ,
+                    :盐酸米诺环素胶囊 ,
+                    :阿莫西林分散片 ,
+                    <http://www.semanticweb.org/hp/ontologies/2022/medical#1/4分散片> ;
+              :宜吃 :核桃 ,
+                  :莲子 ,
+                  :青豆 ,
+                  :鸭翅 ;
+              :常用药品 :氨苄西林胶囊 ,
+                    :盐酸左氧氟沙星胶囊 ;
+              :并发症 :蜂窝织炎 ;
+              :忌吃 :啤酒 ,
+                  :白酒 ,
+                  :绿豆 ,
+                  :黑豆 ;
+              :所属科室 :血液科 ;
+              :推荐食谱 :凉瓜黄豆猪肉煲 ,
+                    :油焖黄豆 ,
+                    :西芹洋葱黄豆番茄汤 ,
+                    :黄豆芽烧豆泡 ;
+              :治疗方法 :支持性治疗 ,
+                    :药物治疗 ;
+              :症状 :恶心 ,
+                  :斑丘疹 ,
+                  :斑疹 ,
+                  :脑膜炎 ,
+                  :血管内凝血 ,
+                  :败血症 ;
+              :诊断检查 :皮损 ,
+                    :脑脊液细菌培养 ,
+                    :血液检查 ,
+                    :血液生化六项检查 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#EB病毒感染
+:EB病毒感染 rdf:type owl:NamedIndividual ,
+                 :治疗方案 ,
+                 :疾病 ;
+        :好评药品 :诺氟沙星胶囊 ;
+        :常用药品 :诺氟沙星胶囊 ;
+        :并发症 :周围神经炎 ;
+        :所属科室 :传染科 ;
+        :治疗方法 :中医治疗 ,
+              :支持性治疗 ;
+        :症状 :恶心 ,
+            :朴玉顺 ,
+            :淋巴结肿大 ,
+            :肝脾肿大 ,
+            :腹泻 ,
+            :食欲减退 ;
+        :诊断检查 :嗜异性凝集试验 ,
+              :神经系统检查 ,
+              :血清学反应 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#Ehler-Danlos综合征
+:Ehler-Danlos综合征 rdf:type owl:NamedIndividual ,
+                          :治疗方案 ,
+                          :疾病 ;
+                 :好评药品 :地塞米松片 ,
+                       :地塞米松磷酸钠注射液 ,
+                       :狼疮丸 ,
+                       :磷酸氯喹片 ,
+                       :醋酸地塞米松片 ,
+                       :醋酸泼尼松片 ;
+                 :常用药品 :醋酸地塞米松片 ,
+                       :醋酸泼尼松片 ;
+                 :并发症 :消化道出血 ;
+                 :所属科室 :风湿免疫科 ;
+                 :治疗方法 :支持性治疗 ,
+                       :药物治疗 ;
+                 :症状 :上消化道出血 ;
+                 :诊断检查 :内镜检查 ,
+                       :血管造影 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#cspc盐酸雷尼替丁胶囊
+:cspc盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#七佛山诺氟沙星胶囊
+:七佛山诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#万杰制药奥美拉唑肠溶胶囊
+:万杰制药奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#万森制药盐酸左氧氟沙星胶囊
+:万森制药盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#万泽制药醋酸泼尼松片
+:万泽制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#三七片
+:三七片 rdf:type owl:NamedIndividual ,
+              :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#三乙醇胺乳膏
+:三乙醇胺乳膏 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#三叶安比先氨苄西林胶囊
+:三叶安比先氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#三吃海蟹
+:三吃海蟹 rdf:type owl:NamedIndividual ,
+               :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#三才石岐制药呋塞米注射液
+:三才石岐制药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#三才石岐制药呋塞米片
+:三才石岐制药呋塞米片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#三才石岐制药盐酸雷尼替丁胶
+:三才石岐制药盐酸雷尼替丁胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#三才石岐制药醋酸泼尼松片
+:三才石岐制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#三鲜苦瓜汤
+:三鲜苦瓜汤 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#上海信谊醋酸地塞米松片
+:上海信谊醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#上海天龙药业奥美拉唑肠溶胶
+:上海天龙药业奥美拉唑肠溶胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#上海延安药业诺氟沙星胶囊
+:上海延安药业诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#上海朝晖呋塞米片
+:上海朝晖呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#上海皇象铁力蓝天诺氟沙星胶
+:上海皇象铁力蓝天诺氟沙星胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#上海禾丰呋塞米注射液
+:上海禾丰呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#上海长城盐酸苯海索片
+:上海长城盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#上海长城药业盐酸苯海索片
+:上海长城药业盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#上消化道X线钡餐
+:上消化道X线钡餐 rdf:type owl:NamedIndividual ,
+                   :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#上消化道出血
+:上消化道出血 rdf:type owl:NamedIndividual ,
+                 :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#下腹部反跳痛
+:下腹部反跳痛 rdf:type owl:NamedIndividual ,
+                 :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#下颌角外翻
+:下颌角外翻 rdf:type owl:NamedIndividual ,
+                :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#不孕不育
+:不孕不育 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :生殖健康 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#东北制药呋塞米片
+:东北制药呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#东北制药奥美拉唑肠溶胶囊
+:东北制药奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#东北盐酸金刚烷胺片
+:东北盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#东康药业诺氟沙星胶囊
+:东康药业诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#东药呋塞米注射液
+:东药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#东药奥美拉唑肠溶胶囊
+:东药奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#东药盐酸左氧氟沙星胶囊
+:东药盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#中医治疗
+:中医治疗 rdf:type owl:NamedIndividual ,
+               :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#中医科
+:中医科 rdf:type owl:NamedIndividual ,
+              :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#中医综合
+:中医综合 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :中医科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#中南制药盐酸苯海索片
+:中南制药盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#中山尼克美诺氟沙星胶囊
+:中山尼克美诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#中联四药盐酸金刚烷胺片
+:中联四药盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#临汾健民盐酸苯海索片
+:临汾健民盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#丹毒
+:丹毒 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#丽珠奇乐
+:丽珠奇乐 rdf:type owl:NamedIndividual ,
+               :生产商 ;
+      :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#乌骨鸡
+:乌骨鸡 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#乐仁堂西黄丸
+:乐仁堂西黄丸 rdf:type owl:NamedIndividual ,
+                 :生产商 ;
+        :生产药品 :西黄丸 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#乐宁盐酸金刚烷胺片
+:乐宁盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#乐宁盐酸雷尼替丁胶囊
+:乐宁盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#乐美奇阿奇霉素分散片
+:乐美奇阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#九味益脑颗粒
+:九味益脑颗粒 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#九寨沟天然西黄丸
+:九寨沟天然西黄丸 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :西黄丸 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#九寨沟西黄丸
+:九寨沟西黄丸 rdf:type owl:NamedIndividual ,
+                 :生产商 ;
+        :生产药品 :西黄丸 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#九泰药业奥美拉唑肠溶胶囊
+:九泰药业奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#九连山药业氯霉素片
+:九连山药业氯霉素片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#乳酸左氧氟沙星分散片
+:乳酸左氧氟沙星分散片 rdf:type owl:NamedIndividual ,
+                     :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#乳酸左氧氟沙星片
+:乳酸左氧氟沙星片 rdf:type owl:NamedIndividual ,
+                   :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#云南白药
+:云南白药 rdf:type owl:NamedIndividual ,
+               :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#五官科
+:五官科 rdf:type owl:NamedIndividual ,
+              :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#亚宝药业诺氟沙星胶囊
+:亚宝药业诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#亚邦盐酸左氧氟沙星胶囊
+:亚邦盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#产科
+:产科 rdf:type owl:NamedIndividual ,
+             :二级科室 ;
+    :属于 :妇产科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#亨瑞达制药醋酸地塞米松片
+:亨瑞达制药醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#亨瑞达制药醋酸泼尼松片
+:亨瑞达制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#京西药业呋塞米注射液
+:京西药业呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#亿帆药业雷公藤多苷片
+:亿帆药业雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#仙琚制药醋酸地塞米松片
+:仙琚制药醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#仙琚制药醋酸泼尼松片
+:仙琚制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#仙琚醋酸地塞米松片
+:仙琚醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#仙琚醋酸泼尼松片
+:仙琚醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#传导阻滞
+:传导阻滞 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#传染科
+:传染科 rdf:type owl:NamedIndividual ,
+              :二级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#伤科跌打丸
+:伤科跌打丸 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#伤科跌打片
+:伤科跌打片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#伸筋丹胶囊
+:伸筋丹胶囊 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#低热
+:低热 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#低血压
+:低血压 rdf:type owl:NamedIndividual ,
+              :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#低钠血症
+:低钠血症 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#佛山手心制药醋酸泼尼松片
+:佛山手心制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#佳乐弗乳酸左氧氟沙星片
+:佳乐弗乳酸左氧氟沙星片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :乳酸左氧氟沙星片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#依托红霉素片
+:依托红霉素片 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#便血
+:便血 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#保妥适
+:保妥适 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :注射用A型肉毒毒素 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#俞氏乳酸左氧氟沙星片
+:俞氏乳酸左氧氟沙星片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :乳酸左氧氟沙星片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#信谊万象盐酸金刚烷胺片
+:信谊万象盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#信谊盐酸金刚烷胺片
+:信谊盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#信谊醋酸地塞米松片
+:信谊醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#信谊醋酸泼尼松片
+:信谊醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#倍特药业呋塞米注射液
+:倍特药业呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#健生制药阿奇霉素分散片
+:健生制药阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#儿科
+:儿科 rdf:type owl:NamedIndividual ,
+             :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#儿科综合
+:儿科综合 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :儿科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#克迪圣
+:克迪圣 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#免疫学检测
+:免疫学检测 rdf:type owl:NamedIndividual ,
+                :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#免疫病理检查
+:免疫病理检查 rdf:type owl:NamedIndividual ,
+                 :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#全星制药奥美拉唑肠溶胶囊
+:全星制药奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#六甲蜜胺胶囊
+:六甲蜜胺胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#六药氯霉素片
+:六药氯霉素片 rdf:type owl:NamedIndividual ,
+                 :生产商 ;
+        :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#兰州生物制品注射用A型肉毒
+:兰州生物制品注射用A型肉毒 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :注射用A型肉毒毒素 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#兰花药业诺氟沙星胶囊
+:兰花药业诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#兰药药业醋酸地塞米松片
+:兰药药业醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#兰陵制药盐酸左氧氟沙星胶囊
+:兰陵制药盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#共济失调
+:共济失调 rdf:type owl:NamedIndividual ,
+               :疾病 ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#其他科室
+:其他科室 rdf:type owl:NamedIndividual ,
+               :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#其他综合
+:其他综合 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :其他科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#冀南制药呋塞米注射液
+:冀南制药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#内出血
+:内出血 rdf:type owl:NamedIndividual ,
+              :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#内分泌科
+:内分泌科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :内科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#内斜A征
+:内斜A征 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#内科
+:内科 rdf:type owl:NamedIndividual ,
+             :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#内镜检查
+:内镜检查 rdf:type owl:NamedIndividual ,
+               :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#冬菇椰菜豆腐粉丝汤
+:冬菇椰菜豆腐粉丝汤 rdf:type owl:NamedIndividual ,
+                    :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#凉瓜黄豆猪肉煲
+:凉瓜黄豆猪肉煲 rdf:type owl:NamedIndividual ,
+                  :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#减肥
+:减肥 rdf:type owl:NamedIndividual ,
+             :二级科室 ;
+    :属于 :其他科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#创伤
+:创伤 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#利君制药奥美拉唑肠溶胶囊
+:利君制药奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#利君制药醋酸泼尼松片
+:利君制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#利君制药阿奇霉素分散片
+:利君制药阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#利民制药盐酸左氧氟沙星胶囊
+:利民制药盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#前锋药业呋塞米注射液
+:前锋药业呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#力生制药盐酸苯海索片
+:力生制药盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#力生制药醋酸地塞米松片
+:力生制药醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#力生呋塞米片
+:力生呋塞米片 rdf:type owl:NamedIndividual ,
+                 :生产商 ;
+        :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#力生醋酸泼尼松片
+:力生醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#化脓性脑膜炎
+:化脓性脑膜炎 rdf:type owl:NamedIndividual ,
+                 :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#北京中新制药醋酸泼尼松片
+:北京中新制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#北京京丰制药集团诺氟沙星胶
+:北京京丰制药集团诺氟沙星胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#北京京丰制药集团阿奇霉素分
+:北京京丰制药集团阿奇霉素分 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#北京京丰诺氟沙星胶囊
+:北京京丰诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#北京同仁堂西黄丸
+:北京同仁堂西黄丸 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :西黄丸 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#北京太洋呋塞米片
+:北京太洋呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#北京曙光盐酸雷尼替丁胶囊
+:北京曙光盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#北京曙光药业盐酸雷尼替丁胶
+:北京曙光药业盐酸雷尼替丁胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#北大医药氯霉素片
+:北大医药氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#千汇诺氟沙星胶囊
+:千汇诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#千金协力药业雷公藤多甙片
+:千金协力药业雷公藤多甙片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :雷公藤多甙片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#华中药业醋酸泼尼松片
+:华中药业醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#华侨药业西黄丸
+:华侨药业西黄丸 rdf:type owl:NamedIndividual ,
+                  :生产商 ;
+         :生产药品 :西黄丸 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#华南牌醋酸泼尼松片
+:华南牌醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#华南药业氯霉素片
+:华南药业氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#华南药业醋酸泼尼松片
+:华南药业醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#华南药业雷公藤多甙片
+:华南药业雷公藤多甙片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多甙片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#华安药业氯霉素片
+:华安药业氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#华润双鹤利民药业
+:华润双鹤利民药业 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#华鑫药业醋酸地塞米松片
+:华鑫药业醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#华阳制药呋塞米注射液
+:华阳制药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#南光化学注射用甲泼尼龙琥珀
+:南光化学注射用甲泼尼龙琥珀 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :注射用甲泼尼龙琥珀酸钠 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#南光注射用甲泼尼龙琥珀酸钠
+:南光注射用甲泼尼龙琥珀酸钠 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :注射用甲泼尼龙琥珀酸钠 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#南国药业呋塞米注射液
+:南国药业呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#南少林药业呋塞米注射液
+:南少林药业呋塞米注射液 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#南瓜子仁
+:南瓜子仁 rdf:type owl:NamedIndividual ,
+               :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#南阳普康药业醋酸地塞米松片
+:南阳普康药业醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#南阳普康醋酸地塞米松片
+:南阳普康醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#参志胶囊
+:参志胶囊 rdf:type owl:NamedIndividual ,
+               :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#双湖盐酸苯海索片
+:双湖盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#双燕牌醋酸地塞米松片
+:双燕牌醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#双益雷公藤多苷片
+:双益雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#双花百合片
+:双花百合片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#双菇番茄黄瓜紫菜汤
+:双菇番茄黄瓜紫菜汤 rdf:type owl:NamedIndividual ,
+                    :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#双虎肿痛宁
+:双虎肿痛宁 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#反应迟钝
+:反应迟钝 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#发烧
+:发烧 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#口咽部水疱状损害
+:口咽部水疱状损害 rdf:type owl:NamedIndividual ,
+                   :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#口腔科
+:口腔科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :五官科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#口齿不清
+:口齿不清 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#古田药业氯霉素片
+:古田药业氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#古田药业诺氟沙星胶囊
+:古田药业诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#台山化学制药氯霉素片
+:台山化学制药氯霉素片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#右下腹痛
+:右下腹痛 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#吉林集安益盛呋塞米注射液
+:吉林集安益盛呋塞米注射液 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#吉林麦克福源醋酸泼尼松片
+:吉林麦克福源醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#同仁堂西黄丸
+:同仁堂西黄丸 rdf:type owl:NamedIndividual ,
+                 :生产商 ;
+        :生产药品 :西黄丸 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#同达药业盐酸左氧氟沙星胶囊
+:同达药业盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#君维清
+:君维清 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#吞咽困难
+:吞咽困难 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#启元国药呋塞米注射液
+:启元国药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#呋噻米片
+:呋噻米片 rdf:type owl:NamedIndividual ,
+               :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#呋塞米注射液
+:呋塞米注射液 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#呋塞米片
+:呋塞米片 rdf:type owl:NamedIndividual ,
+               :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#周围神经炎
+:周围神经炎 rdf:type owl:NamedIndividual ,
+                :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#周围血白细胞计数及分类检验
+:周围血白细胞计数及分类检验 rdf:type owl:NamedIndividual ,
+                        :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#呼吸内科
+:呼吸内科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :内科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#呼吸道感染
+:呼吸道感染 rdf:type owl:NamedIndividual ,
+                :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#咸鸭蛋
+:咸鸭蛋 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#咽痛
+:咽痛 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#哈药总厂氨苄西林胶囊
+:哈药总厂氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#哈药诺捷奥美拉唑肠溶胶囊
+:哈药诺捷奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#哈药诺捷阿奇霉素分散片
+:哈药诺捷阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#唐山隆康醋酸地塞米松片
+:唐山隆康醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#唐海制药醋酸地塞米松片
+:唐海制药醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#啤酒
+:啤酒 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#嗜异性凝集试验
+:嗜异性凝集试验 rdf:type owl:NamedIndividual ,
+                  :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#嘉美得制药醋酸泼尼松片
+:嘉美得制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#四川大冢盐酸左氧氟沙星胶囊
+:四川大冢盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#四川好医生诺氟沙星胶囊
+:四川好医生诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#圣鲁制药呋塞米注射液
+:圣鲁制药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#地塞米松片
+:地塞米松片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#地塞米松磷酸钠注射液
+:地塞米松磷酸钠注射液 rdf:type owl:NamedIndividual ,
+                     :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#地奥醋酸泼尼松片
+:地奥醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#复方三七胶囊
+:复方三七胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#复方双花口服液
+:复方双花口服液 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#复方四环素泼尼松膜
+:复方四环素泼尼松膜 rdf:type owl:NamedIndividual ,
+                    :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#复方斑蝥胶囊
+:复方斑蝥胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#复方炉甘石外用散
+:复方炉甘石外用散 rdf:type owl:NamedIndividual ,
+                   :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#复方环磷酰胺片
+:复方环磷酰胺片 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#复方苦木消炎分散片
+:复方苦木消炎分散片 rdf:type owl:NamedIndividual ,
+                    :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#复方骨肽注射液
+:复方骨肽注射液 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#复旦复华雷公藤多苷片
+:复旦复华雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#外斜A征
+:外斜A征 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#外斜V征
+:外斜V征 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#外科
+:外科 rdf:type owl:NamedIndividual ,
+             :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#大冢制药盐酸左氧氟沙星胶囊
+:大冢制药盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#大庆华科盐酸雷尼替丁胶囊
+:大庆华科盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#大洋制药盐酸氨溴索分散片
+:大洋制药盐酸氨溴索分散片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸氨溴索分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#大深林盐酸雷尼替丁胶囊
+:大深林盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#大白菜饺
+:大白菜饺 rdf:type owl:NamedIndividual ,
+               :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#大黄碳酸氢钠片
+:大黄碳酸氢钠片 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天士力西黄丸
+:天士力西黄丸 rdf:type owl:NamedIndividual ,
+                 :生产商 ;
+        :生产药品 :西黄丸 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天峰制药呋塞米注射液
+:天峰制药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天方药业醋酸泼尼松片
+:天方药业醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津健生阿奇霉素分散片
+:天津健生阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津力生制药呋塞米片
+:天津力生制药呋塞米片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津力生制药盐酸苯海索片
+:天津力生制药盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津力生制药醋酸地塞米松片
+:天津力生制药醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津力生制药醋酸泼尼松片
+:天津力生制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津天药药业醋酸地塞米松片
+:天津天药药业醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津天药药业醋酸泼尼松片
+:天津天药药业醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津天药醋酸泼尼松片
+:天津天药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津太平洋盐酸雷尼替丁胶囊
+:天津太平洋盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津太平洋醋酸地塞米松片
+:天津太平洋醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津太平洋醋酸泼尼松片
+:天津太平洋醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津柏海醋酸地塞米松片
+:天津柏海醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津柏海醋酸泼尼松片
+:天津柏海醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津金耀呋塞米注射液
+:天津金耀呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天津金耀注射用甲泼尼龙琥珀
+:天津金耀注射用甲泼尼龙琥珀 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :注射用甲泼尼龙琥珀酸钠 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天源制药氯霉素片
+:天源制药氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#天蚕片
+:天蚕片 rdf:type owl:NamedIndividual ,
+              :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#太原制药诺氟沙星胶囊
+:太原制药诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#太洋药业呋塞米片
+:太洋药业呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#失眠
+:失眠 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#头孢丙烯分散片
+:头孢丙烯分散片 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#头孢呋辛酯干混悬剂
+:头孢呋辛酯干混悬剂 rdf:type owl:NamedIndividual ,
+                    :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#头孢拉定分散片
+:头孢拉定分散片 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#头孢拉定胶囊
+:头孢拉定胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#头孢羟氨苄颗粒
+:头孢羟氨苄颗粒 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#头痛
+:头痛 rdf:type owl:NamedIndividual ,
+             :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#奥美拉唑肠溶片
+:奥美拉唑肠溶片 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#奥美拉唑肠溶胶囊
+:奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                   :生产商 ,
+                   :药物 ;
+          :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#好医生氨苄西林胶囊
+:好医生氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#好医生诺氟沙星胶囊
+:好医生诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#妇产科
+:妇产科 rdf:type owl:NamedIndividual ,
+              :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#妇科
+:妇科 rdf:type owl:NamedIndividual ,
+             :二级科室 ;
+    :属于 :妇产科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#威光参志胶囊
+:威光参志胶囊 rdf:type owl:NamedIndividual ,
+                 :生产商 ;
+        :生产药品 :参志胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#宁夏启元呋塞米注射液
+:宁夏启元呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#宁心益智胶囊
+:宁心益智胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#宁新宝盐酸左氧氟沙星胶囊
+:宁新宝盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#宇德制药醋酸泼尼松片
+:宇德制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#安宫牛黄丸
+:安宫牛黄丸 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#安徽万森盐酸左氧氟沙星胶囊
+:安徽万森盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#安徽新世纪盐酸左氧氟沙星胶
+:安徽新世纪盐酸左氧氟沙星胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#安徽新陇海雷公藤多苷片
+:安徽新陇海雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#安徽金太阳醋酸地塞米松片
+:安徽金太阳醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#安徽金太阳醋酸泼尼松片
+:安徽金太阳醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#安必君氨苄西林胶囊
+:安必君氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#安诺药业盐酸左氧氟沙星胶囊
+:安诺药业盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#安诺药业阿奇霉素分散片
+:安诺药业阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#安阳华安氯霉素片
+:安阳华安氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#宜昌人福盐酸金刚烷胺片
+:宜昌人福盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#宜昌长江乳酸左氧氟沙星片
+:宜昌长江乳酸左氧氟沙星片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :乳酸左氧氟沙星片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#宜昌长江阿奇霉素分散片
+:宜昌长江阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#容生醋酸泼尼松片
+:容生醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#对症治疗
+:对症治疗 rdf:type owl:NamedIndividual ,
+               :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#小儿内科
+:小儿内科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :儿科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#小儿外科
+:小儿外科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :儿科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#尤金
+:尤金 rdf:type owl:NamedIndividual ,
+             :生产商 ;
+    :生产药品 :甲泼尼龙片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#尼克美诺氟沙星胶囊
+:尼克美诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#尿常规
+:尿常规 rdf:type owl:NamedIndividual ,
+              :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#尿液分析
+:尿液分析 rdf:type owl:NamedIndividual ,
+               :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山东健康盐酸苯海索片
+:山东健康盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山东健康药业盐酸苯海索片
+:山东健康药业盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山东圣鲁呋塞米注射液
+:山东圣鲁呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山东新华氯霉素片
+:山东新华氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山东新华醋酸泼尼松片
+:山东新华醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山东方明呋塞米注射液
+:山东方明呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山东泰谊盐酸金刚烷胺片
+:山东泰谊盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山姆士药业盐酸左氧氟沙星胶
+:山姆士药业盐酸左氧氟沙星胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山药桂圆粥
+:山药桂圆粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山药粥
+:山药粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山药蛋黄粥
+:山药蛋黄粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西临汾氯霉素片
+:山西临汾氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西临汾盐酸苯海索片
+:山西临汾盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西云鹏制药呋塞米片
+:山西云鹏制药呋塞米片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西云鹏制药醋酸地塞米松片
+:山西云鹏制药醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西云鹏呋塞米片
+:山西云鹏呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西云鹏醋酸地塞米松片
+:山西云鹏醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西亨瑞达醋酸地塞米松片
+:山西亨瑞达醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西亨瑞达醋酸泼尼松片
+:山西亨瑞达醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西同达盐酸左氧氟沙星胶囊
+:山西同达盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西天源氯霉素片
+:山西天源氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西振东诺氟沙星胶囊
+:山西振东诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#山西晋新双鹤呋塞米注射液
+:山西晋新双鹤呋塞米注射液 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#川贝杏仁银耳羹
+:川贝杏仁银耳羹 rdf:type owl:NamedIndividual ,
+                  :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#川贝枇杷糖浆
+:川贝枇杷糖浆 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#左克
+:左克 rdf:type owl:NamedIndividual ,
+             :生产商 ;
+    :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#左氧氟沙星片
+:左氧氟沙星片 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#左芙盐酸左氧氟沙星胶囊
+:左芙盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#巨泰呋塞米片
+:巨泰呋塞米片 rdf:type owl:NamedIndividual ,
+                 :生产商 ;
+        :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#帝益盐酸苯海索片
+:帝益盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#常州康普呋塞米注射液
+:常州康普呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#常州康普盐酸苯海索片
+:常州康普盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#常州康普醋酸地塞米松片
+:常州康普醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#干烧黄豆芽
+:干烧黄豆芽 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#干腌菜
+:干腌菜 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#平光制药醋酸泼尼松片
+:平光制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东三才呋塞米注射液
+:广东三才呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东三才呋塞米片
+:广东三才呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东三才盐酸雷尼替丁胶囊
+:广东三才盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东三才石岐呋塞米片
+:广东三才石岐呋塞米片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东三才石岐盐酸雷尼替丁胶
+:广东三才石岐盐酸雷尼替丁胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东三才石岐诺氟沙星胶囊
+:广东三才石岐诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东三才石岐醋酸泼尼松片
+:广东三才石岐醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东三才诺氟沙星胶囊
+:广东三才诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东九连山氯霉素片
+:广东九连山氯霉素片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东华南氯霉素片
+:广东华南氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东华南雷公藤多甙片
+:广东华南雷公藤多甙片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多甙片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东南国呋塞米注射液
+:广东南国呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东台城制药氯霉素片
+:广东台城制药氯霉素片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东安诺盐酸左氧氟沙星胶囊
+:广东安诺盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东安诺阿奇霉素分散片
+:广东安诺阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东彼迪阿奇霉素分散片
+:广东彼迪阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东罗浮山国药呋塞米注射液
+:广东罗浮山国药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东邦民呋塞米注射液
+:广东邦民呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广东香山堂制药诺氟沙星胶囊
+:广东香山堂制药诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广州东康氯霉素片
+:广州东康氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广州东康诺氟沙星胶囊
+:广州东康诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广州康和醋酸泼尼松片
+:广州康和醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广州白云山光华氯霉素片
+:广州白云山光华氯霉素片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广康药业醋酸地塞米松片
+:广康药业醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#广西南宁百会醋酸泼尼松片
+:广西南宁百会醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#康和醋酸泼尼松片
+:康和醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#康复治疗
+:康复治疗 rdf:type owl:NamedIndividual ,
+               :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#康复科
+:康复科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :其他科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#康普药业奥美拉唑肠溶胶囊
+:康普药业奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#康普药业氨苄西林胶囊
+:康普药业氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#康普药业盐酸左氧氟沙星胶囊
+:康普药业盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#康普药业阿奇霉素分散片
+:康普药业阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#康美药业盐酸雷尼替丁胶囊
+:康美药业盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#康美药业诺氟沙星胶囊
+:康美药业诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#康裕雷公藤多苷片
+:康裕雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#延安药业诺氟沙星胶囊
+:延安药业诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#开封制药呋塞米注射液
+:开封制药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#强身氯霉素片
+:强身氯霉素片 rdf:type owl:NamedIndividual ,
+                 :生产商 ;
+        :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#彼迪药业阿奇霉素分散片
+:彼迪药业阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#徐州莱恩呋塞米注射液
+:徐州莱恩呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#得恩德制药雷公藤多苷片
+:得恩德制药雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#得恩德雷公藤多苷片
+:得恩德雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#德远药业雷公藤多苷片
+:德远药业雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#心内科
+:心内科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :内科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#心动过速
+:心动过速 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#心理科
+:心理科 rdf:type owl:NamedIndividual ,
+              :二级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#心电图
+:心电图 rdf:type owl:NamedIndividual ,
+              :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#心胸外科
+:心胸外科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :外科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#心血管造影
+:心血管造影 rdf:type owl:NamedIndividual ,
+                :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#必与
+:必与 rdf:type owl:NamedIndividual ,
+             :生产商 ;
+    :生产药品 :盐酸氨溴索分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#急性咽炎
+:急性咽炎 rdf:type owl:NamedIndividual ,
+               :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#性病科
+:性病科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :皮肤性病科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#恒健制药诺氟沙星胶囊
+:恒健制药诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#恒健诺氟沙星胶囊
+:恒健诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#恶心
+:恶心 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#恶心与呕吐
+:恶心与呕吐 rdf:type owl:NamedIndividual ,
+                :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#悦康药业奥美拉唑肠溶胶囊
+:悦康药业奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#惊厥
+:惊厥 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#感冒清胶囊
+:感冒清胶囊 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#感染科
+:感染科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :外科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#成都一药呋塞米注射液
+:成都一药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#成都一药呋塞米片
+:成都一药呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#成都东洋百信氨苄西林胶囊
+:成都东洋百信氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#成都倍特呋塞米注射液
+:成都倍特呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#成都天台山制药诺氟沙星胶囊
+:成都天台山制药诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#成都天台山诺氟沙星胶囊
+:成都天台山诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#成都第一呋塞米注射液
+:成都第一呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#成都第一呋塞米片
+:成都第一呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#成都药业醋酸泼尼松片
+:成都药业醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#成都锦华氯霉素片
+:成都锦华氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#成都锦华诺氟沙星胶囊
+:成都锦华诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#手术治疗
+:手术治疗 rdf:type owl:NamedIndividual ,
+               :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#扑米酮片
+:扑米酮片 rdf:type owl:NamedIndividual ,
+               :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#托伐普坦片
+:托伐普坦片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#扬州星斗呋塞米片
+:扬州星斗呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#扬州艾迪制药呋塞米片
+:扬州艾迪制药呋塞米片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#抑郁
+:抑郁 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#抗之霸诺氟沙星胶囊
+:抗之霸诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#抗人球蛋白试验
+:抗人球蛋白试验 rdf:type owl:NamedIndividual ,
+                  :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#抗病毒口服液
+:抗病毒口服液 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#抗链球菌激酶试验
+:抗链球菌激酶试验 rdf:type owl:NamedIndividual ,
+                   :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#抽搐
+:抽搐 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#抽风
+:抽风 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#持续性疼痛
+:持续性疼痛 rdf:type owl:NamedIndividual ,
+                :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#振东制药诺氟沙星胶囊
+:振东制药诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#接骨七厘片
+:接骨七厘片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#支持性治疗
+:支持性治疗 rdf:type owl:NamedIndividual ,
+                :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#支持治疗
+:支持治疗 rdf:type owl:NamedIndividual ,
+               :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#整形美容科
+:整形美容科 rdf:type owl:NamedIndividual ,
+                :二级科室 ;
+       :属于 :外科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#斑丘疹
+:斑丘疹 rdf:type owl:NamedIndividual ,
+              :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#斑疹
+:斑疹 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#新乡常乐醋酸地塞米松片
+:新乡常乐醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#新春都诺氟沙星胶囊
+:新春都诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#新陇海药业雷公藤多苷片
+:新陇海药业雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#方强制药盐酸左氧氟沙星胶囊
+:方强制药盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#昆明振华氯霉素片
+:昆明振华氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#昏迷
+:昏迷 rdf:type owl:NamedIndividual ,
+             :疾病 ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#星斗药业呋塞米片
+:星斗药业呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#晋新双鹤呋塞米注射液
+:晋新双鹤呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#普外科
+:普外科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :外科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#普洛康裕天然药物雷公藤多苷
+:普洛康裕天然药物雷公藤多苷 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#智力发育迟缓
+:智力发育迟缓 rdf:type owl:NamedIndividual ,
+                 :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#替硝唑胶囊
+:替硝唑胶囊 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#望奎制药诺氟沙星胶囊
+:望奎制药诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#朝晖药业呋塞米片
+:朝晖药业呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#朝阳德远雷公藤多苷片
+:朝阳德远雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#本溪仙草堂西黄丸
+:本溪仙草堂西黄丸 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :西黄丸 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#朴玉顺
+:朴玉顺 rdf:type owl:NamedIndividual ,
+              :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#杏仁
+:杏仁 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#来立信
+:来立信 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :乳酸左氧氟沙星片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#杭州民生药业奥美拉唑肠溶胶
+:杭州民生药业奥美拉唑肠溶胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#松子仁
+:松子仁 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#枸杞菜猪肝瘦肉汤
+:枸杞菜猪肝瘦肉汤 rdf:type owl:NamedIndividual ,
+                   :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#柏海醋酸地塞米松片
+:柏海醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#柏海醋酸泼尼松片
+:柏海醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#栗子山楂羹
+:栗子山楂羹 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#栗子（熟）
+:栗子（熟） rdf:type owl:NamedIndividual ,
+                :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#核桃
+:核桃 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#格林生物醋酸地塞米松片
+:格林生物醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#格林生物醋酸泼尼松片
+:格林生物醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#桂圆栗子粥
+:桂圆栗子粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#桃仁
+:桃仁 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#桃仁红枣粥
+:桃仁红枣粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#桑椹膏
+:桑椹膏 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#椎节分裂
+:椎节分裂 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#欣匹特
+:欣匹特 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#欧意诺氟沙星胶囊
+:欧意诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#武汉中联盐酸金刚烷胺片
+:武汉中联盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#武汉第六制药氯霉素片
+:武汉第六制药氯霉素片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#比利时辉瑞注射用甲泼尼龙琥
+:比利时辉瑞注射用甲泼尼龙琥 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :注射用甲泼尼龙琥珀酸钠 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#民生奥美拉唑肠溶胶囊
+:民生奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#氧氟沙星片
+:氧氟沙星片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#氨咖黄敏胶囊
+:氨咖黄敏胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#氨苄西林胶囊
+:氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#氯霉素片
+:氯霉素片 rdf:type owl:NamedIndividual ,
+               :生产商 ,
+               :药物 ;
+      :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#汇天生物雷公藤多甙片
+:汇天生物雷公藤多甙片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多甙片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#汕头金石制药诺氟沙星胶囊
+:汕头金石制药诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#汕头金石诺氟沙星胶囊
+:汕头金石诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏亚邦爱普森呋塞米片
+:江苏亚邦爱普森呋塞米片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏华阳呋塞米注射液
+:江苏华阳呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏天士力盐酸苯海索片
+:江苏天士力盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏平光氯霉素片
+:江苏平光氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏平光醋酸泼尼松片
+:江苏平光醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏神华氯霉素片
+:江苏神华氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏福邦盐酸左氧氟沙星胶囊
+:江苏福邦盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏美通雷公藤多苷片
+:江苏美通雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏聚荣氯霉素片
+:江苏聚荣氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏鹏鹞奥美拉唑肠溶胶囊
+:江苏鹏鹞奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏鹏鹞盐酸金刚烷胺片
+:江苏鹏鹞盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏鹏鹞醋酸泼尼松片
+:江苏鹏鹞醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江苏黄河药业盐酸雷尼替丁胶
+:江苏黄河药业盐酸雷尼替丁胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#江西赣南氯霉素片
+:江西赣南氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#沈阳一药呋塞米片
+:沈阳一药呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#沈阳一药奥美拉唑肠溶胶囊
+:沈阳一药奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#沈阳一药盐酸金刚烷胺片
+:沈阳一药盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#沈阳澳华制药奥美拉唑肠溶胶
+:沈阳澳华制药奥美拉唑肠溶胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#河北天成药业乳酸左氧氟沙星
+:河北天成药业乳酸左氧氟沙星 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :乳酸左氧氟沙星片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#河北山姆士盐酸左氧氟沙星胶
+:河北山姆士盐酸左氧氟沙星胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#河北巨龙盐酸金刚烷胺片
+:河北巨龙盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#河北巨龙药业盐酸金刚烷胺片
+:河北巨龙药业盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#河北金砖呋塞米注射液
+:河北金砖呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#河南润弘呋塞米注射液
+:河南润弘呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#河南福森盐酸雷尼替丁胶囊
+:河南福森盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#油焖黄豆
+:油焖黄豆 rdf:type owl:NamedIndividual ,
+               :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#泌尿内科
+:泌尿内科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :内科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#泌尿外科
+:泌尿外科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :外科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#泥胡菜
+:泥胡菜 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#注射用A型肉毒毒素
+:注射用A型肉毒毒素 rdf:type owl:NamedIndividual ,
+                    :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#注射用呋塞米
+:注射用呋塞米 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#注射用头孢唑林钠
+:注射用头孢唑林钠 rdf:type owl:NamedIndividual ,
+                   :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#注射用布美他尼
+:注射用布美他尼 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#注射用甲泼尼龙琥珀酸钠
+:注射用甲泼尼龙琥珀酸钠 rdf:type owl:NamedIndividual ,
+                      :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#注射用盐酸平阳霉素
+:注射用盐酸平阳霉素 rdf:type owl:NamedIndividual ,
+                    :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#泰谊制药盐酸金刚烷胺片
+:泰谊制药盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#洛普星
+:洛普星 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#洛索洛芬钠胶囊
+:洛索洛芬钠胶囊 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#津华晖星奥美拉唑肠溶胶囊
+:津华晖星奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#浆细胞
+:浆细胞 rdf:type owl:NamedIndividual ,
+              :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#济南利民盐酸左氧氟沙星胶囊
+:济南利民盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#浓氯化钠注射液
+:浓氯化钠注射液 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#浙江巨泰呋塞米片
+:浙江巨泰呋塞米片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#浙江花园盐酸左氧氟沙星胶囊
+:浙江花园盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#海南三叶制药氨苄西林胶囊
+:海南三叶制药氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#海南三叶美好氨苄西林胶囊
+:海南三叶美好氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#海南全星奥美拉唑肠溶胶囊
+:海南全星奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#海南普利盐酸左氧氟沙星胶囊
+:海南普利盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#海南海神同洲盐酸左氧氟沙星
+:海南海神同洲盐酸左氧氟沙星 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#海口制药氨苄西林胶囊
+:海口制药氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#海口奇力盐酸左氧氟沙星胶囊
+:海口奇力盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#海神同洲奥美拉唑肠溶胶囊
+:海神同洲奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#海神同洲盐酸左氧氟沙星胶囊
+:海神同洲盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#海蜇皮
+:海蜇皮 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#涂片
+:涂片 rdf:type owl:NamedIndividual ,
+             :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#消化内科
+:消化内科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :内科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#消化道出血
+:消化道出血 rdf:type owl:NamedIndividual ,
+                :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#消炎片
+:消炎片 rdf:type owl:NamedIndividual ,
+              :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#消瘦
+:消瘦 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#消癌平片
+:消癌平片 rdf:type owl:NamedIndividual ,
+               :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#润弘制药呋塞米注射液
+:润弘制药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#润都制药奥美拉唑肠溶胶囊
+:润都制药奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#淋巴结肿大
+:淋巴结肿大 rdf:type owl:NamedIndividual ,
+                :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#清热散结片
+:清热散结片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#清热散结胶囊
+:清热散结胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#湖南中南盐酸苯海索片
+:湖南中南盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :盐酸苯海索片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#湖南千金协力雷公藤多甙片
+:湖南千金协力雷公藤多甙片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :雷公藤多甙片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#湖南康尔佳生物医药科技氨苄
+:湖南康尔佳生物医药科技氨苄 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#灵仙跌打片
+:灵仙跌打片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#灵宝豫西氯霉素片
+:灵宝豫西氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#炝泥胡菜
+:炝泥胡菜 rdf:type owl:NamedIndividual ,
+               :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#烟台东诚大洋盐酸氨溴索分散
+:烟台东诚大洋盐酸氨溴索分散 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸氨溴索分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#烦躁不安
+:烦躁不安 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#烧伤科
+:烧伤科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :外科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#烧心
+:烧心 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#热毒宁注射液
+:热毒宁注射液 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#爱普森药业呋塞米片
+:爱普森药业呋塞米片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#爱普森药业盐酸左氧氟沙星胶
+:爱普森药业盐酸左氧氟沙星胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#牛奶菠菜粥
+:牛奶菠菜粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#独一味片
+:独一味片 rdf:type owl:NamedIndividual ,
+               :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#独一味软胶囊
+:独一味软胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#狼疮丸
+:狼疮丸 rdf:type owl:NamedIndividual ,
+              :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#猪肉枸杞汤
+:猪肉枸杞汤 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#猪肉青菜粥
+:猪肉青菜粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#猪肚粥
+:猪肚粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#猪腰薏仁粥
+:猪腰薏仁粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#猫肉
+:猫肉 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#珠海联邦氨苄西林胶囊
+:珠海联邦氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#珠海联邦盐酸左氧氟沙星胶囊
+:珠海联邦盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#甘肃兰药醋酸地塞米松片
+:甘肃兰药醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#生殖健康
+:生殖健康 rdf:type owl:NamedIndividual ,
+               :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#田螺
+:田螺 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#甲强龙
+:甲强龙 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :注射用甲泼尼龙琥珀酸钠 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#甲泼尼龙片
+:甲泼尼龙片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#疱疹
+:疱疹 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#疲劳
+:疲劳 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#痉挛性截瘫步态
+:痉挛性截瘫步态 rdf:type owl:NamedIndividual ,
+                  :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#痤疮样皮疹
+:痤疮样皮疹 rdf:type owl:NamedIndividual ,
+                :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#痴呆
+:痴呆 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白云山光华氯霉素片
+:白云山光华氯霉素片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白云山医药诺氟沙星胶囊
+:白云山医药诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白云山医诺氟沙星胶囊
+:白云山医诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白云山汤阴东泰诺氟沙星胶囊
+:白云山汤阴东泰诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白扁豆
+:白扁豆 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白扁豆粥
+:白扁豆粥 rdf:type owl:NamedIndividual ,
+               :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白敬宇制药醋酸泼尼松片
+:白敬宇制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白果（干）
+:白果（干） rdf:type owl:NamedIndividual ,
+                :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白果（鲜）
+:白果（鲜） rdf:type owl:NamedIndividual ,
+                :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白砂糖
+:白砂糖 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白芍麦枣粥
+:白芍麦枣粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白菜包子
+:白菜包子 rdf:type owl:NamedIndividual ,
+               :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#白酒
+:白酒 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#百会药业醋酸泼尼松片
+:百会药业醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#百合莲子绿豆粥
+:百合莲子绿豆粥 rdf:type owl:NamedIndividual ,
+                  :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#百合薏米绿豆粥
+:百合薏米绿豆粥 rdf:type owl:NamedIndividual ,
+                  :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#百合鸡蛋黄汤
+:百合鸡蛋黄汤 rdf:type owl:NamedIndividual ,
+                 :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#皇象铁力蓝天诺氟沙星胶囊
+:皇象铁力蓝天诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#皮损
+:皮损 rdf:type owl:NamedIndividual ,
+             :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#皮肤性病科
+:皮肤性病科 rdf:type owl:NamedIndividual ,
+                :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#皮肤涂片显微镜检查
+:皮肤涂片显微镜检查 rdf:type owl:NamedIndividual ,
+                    :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#皮肤科
+:皮肤科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :皮肤性病科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#益盛药业呋塞米注射液
+:益盛药业呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#盐酸克林霉素棕榈酸酯分散片
+:盐酸克林霉素棕榈酸酯分散片 rdf:type owl:NamedIndividual ,
+                        :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#盐酸左氧氟沙星胶囊
+:盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                    :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#盐酸氨溴索分散片
+:盐酸氨溴索分散片 rdf:type owl:NamedIndividual ,
+                   :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#盐酸环丙沙星片
+:盐酸环丙沙星片 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#盐酸米诺环素胶囊
+:盐酸米诺环素胶囊 rdf:type owl:NamedIndividual ,
+                   :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#盐酸苯海拉明注射液
+:盐酸苯海拉明注射液 rdf:type owl:NamedIndividual ,
+                    :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#盐酸苯海索片
+:盐酸苯海索片 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#盐酸赖氨酸葡萄糖注射液
+:盐酸赖氨酸葡萄糖注射液 rdf:type owl:NamedIndividual ,
+                      :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#盐酸金刚烷胺片
+:盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#盐酸雷尼替丁胶囊
+:盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                   :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#眼底黄斑部的樱...
+<http://www.semanticweb.org/hp/ontologies/2022/medical#眼底黄斑部的樱...> rdf:type owl:NamedIndividual ,
+                                                                            :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#眼球内陷
+:眼球内陷 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#眼病
+:眼病 rdf:type owl:NamedIndividual ,
+             :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#眼科
+:眼科 rdf:type owl:NamedIndividual ,
+             :二级科室 ;
+    :属于 :五官科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#短颈
+:短颈 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石家庄华新盐酸左氧氟沙星胶
+:石家庄华新盐酸左氧氟沙星胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石家庄华新药业盐酸左氧氟沙
+:石家庄华新药业盐酸左氧氟沙 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石家庄四药盐酸雷尼替丁胶囊
+:石家庄四药盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石家庄康力醋酸地塞米松片
+:石家庄康力醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石家康力药业醋酸地塞米松片
+:石家康力药业醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石家康力药业醋酸泼尼松片
+:石家康力药业醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石药欧意奥美拉唑肠溶胶囊
+:石药欧意奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石药欧意盐酸左氧氟沙星胶囊
+:石药欧意盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石药欧意盐酸雷尼替丁胶囊
+:石药欧意盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石药欧意诺氟沙星胶囊
+:石药欧意诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石药盐酸左氧氟沙星胶囊
+:石药盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#石药集团永丰药业
+:石药集团永丰药业 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#碳酸氢钠片
+:碳酸氢钠片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#磷酸氯喹片
+:磷酸氯喹片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#磷霉素钙片
+:磷霉素钙片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#神经内科
+:神经内科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :内科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#神经外科
+:神经外科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :外科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#神经系统核医学检查
+:神经系统核医学检查 rdf:type owl:NamedIndividual ,
+                    :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#神经系统检查
+:神经系统检查 rdf:type owl:NamedIndividual ,
+                 :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#福建南少林呋塞米注射液
+:福建南少林呋塞米注射液 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#福建古田氯霉素片
+:福建古田氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#福建古田诺氟沙星胶囊
+:福建古田诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#福建汇天雷公藤多甙片
+:福建汇天雷公藤多甙片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多甙片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#福森药业盐酸雷尼替丁胶囊
+:福森药业盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#福邦药业盐酸左氧氟沙星胶囊
+:福邦药业盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#穿心莲片
+:穿心莲片 rdf:type owl:NamedIndividual ,
+               :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#米乐松
+:米乐松 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :注射用甲泼尼龙琥珀酸钠 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#类风湿因子
+:类风湿因子 rdf:type owl:NamedIndividual ,
+                :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#精神障碍
+:精神障碍 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#糖桂花
+:糖桂花 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#糯米莲藕
+:糯米莲藕 rdf:type owl:NamedIndividual ,
+               :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#素炒圆白菜
+:素炒圆白菜 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#素炒西兰花
+:素炒西兰花 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#紧张
+:紧张 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#紫癜
+:紫癜 rdf:type owl:NamedIndividual ,
+             :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#紫米薏仁粥
+:紫米薏仁粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#紫菜豆腐汤
+:紫菜豆腐汤 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#红枣银耳粥
+:红枣银耳粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#红豆莲藕粥
+:红豆莲藕粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#组织细胞增生
+:组织细胞增生 rdf:type owl:NamedIndividual ,
+                 :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#细胞组织化学染色
+:细胞组织化学染色 rdf:type owl:NamedIndividual ,
+                   :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#细菌学检验
+:细菌学检验 rdf:type owl:NamedIndividual ,
+                :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#细菌感染
+:细菌感染 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#结节
+:结节 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#维生素E皇浆口服液
+:维生素E皇浆口服液 rdf:type owl:NamedIndividual ,
+                    :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#绿豆
+:绿豆 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#绿豆奶粥
+:绿豆奶粥 rdf:type owl:NamedIndividual ,
+               :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#绿豆粥
+:绿豆粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#绿豆薏米露
+:绿豆薏米露 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#绿豆面
+:绿豆面 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#罗浮山国药呋塞米注射液
+:罗浮山国药呋塞米注射液 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#羊骨粥
+:羊骨粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#美卓乐
+:美卓乐 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :甲泼尼龙片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#美大康华康呋塞米片
+:美大康华康呋塞米片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :呋塞米片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#美通制药雷公藤多苷片
+:美通制药雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#耳鼻喉科
+:耳鼻喉科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :五官科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#联邦安必仙氨苄西林胶囊
+:联邦安必仙氨苄西林胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :氨苄西林胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#联邦左福康盐酸左氧氟沙星胶
+:联邦左福康盐酸左氧氟沙星胶 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#聚荣制药氯霉素片
+:聚荣制药氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肌痛
+:肌痛 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肛肠科
+:肛肠科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :外科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肝素钠维E乳膏
+:肝素钠维E乳膏 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肝胆外科
+:肝胆外科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :外科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肝脾肿大
+:肝脾肿大 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肠镜
+:肠镜 rdf:type owl:NamedIndividual ,
+             :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肺部感染
+:肺部感染 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肾内科
+:肾内科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :内科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肾功能检查
+:肾功能检查 rdf:type owl:NamedIndividual ,
+                :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肿瘤内科
+:肿瘤内科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :肿瘤科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肿瘤外科
+:肿瘤外科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :肿瘤科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肿瘤标志物检测
+:肿瘤标志物检测 rdf:type owl:NamedIndividual ,
+                  :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肿瘤科
+:肿瘤科 rdf:type owl:NamedIndividual ,
+              :一级科室 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#肿胀
+:肿胀 rdf:type owl:NamedIndividual ,
+             :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#胃钡餐造影
+:胃钡餐造影 rdf:type owl:NamedIndividual ,
+                :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#胸骨后疼痛
+:胸骨后疼痛 rdf:type owl:NamedIndividual ,
+                :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#脊柱椎体平扫
+:脊柱椎体平扫 rdf:type owl:NamedIndividual ,
+                 :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#脐周疼痛
+:脐周疼痛 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#脑电图检查
+:脑电图检查 rdf:type owl:NamedIndividual ,
+                :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#脑脊液细胞学检查
+:脑脊液细胞学检查 rdf:type owl:NamedIndividual ,
+                   :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#脑脊液细胞计数
+:脑脊液细胞计数 rdf:type owl:NamedIndividual ,
+                  :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#脑脊液细菌培养
+:脑脊液细菌培养 rdf:type owl:NamedIndividual ,
+                  :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#脑膜炎
+:脑膜炎 rdf:type owl:NamedIndividual ,
+              :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#脓肿
+:脓肿 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#脱落细胞检查
+:脱落细胞检查 rdf:type owl:NamedIndividual ,
+                 :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#腐竹
+:腐竹 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#腰果
+:腰果 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#腱反射亢进
+:腱反射亢进 rdf:type owl:NamedIndividual ,
+                :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#腹泻
+:腹泻 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#腹痛
+:腹痛 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#腹膜后淋巴结炎
+:腹膜后淋巴结炎 rdf:type owl:NamedIndividual ,
+                  :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#腹膜炎
+:腹膜炎 rdf:type owl:NamedIndividual ,
+              :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#腹部CT
+:腹部CT rdf:type owl:NamedIndividual ,
+               :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#腹部MRI检查
+:腹部MRI检查 rdf:type owl:NamedIndividual ,
+                  :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#腹部平片
+:腹部平片 rdf:type owl:NamedIndividual ,
+               :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#舒筋活血片
+:舒筋活血片 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#舒筋活血胶囊
+:舒筋活血胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#芜湖康奇呋塞米注射液
+:芜湖康奇呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#芝麻
+:芝麻 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#芝麻桃仁粥
+:芝麻桃仁粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#花园药业盐酸左氧氟沙星胶囊
+:花园药业盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#花生仁（炸）
+:花生仁（炸） rdf:type owl:NamedIndividual ,
+                 :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#苏州三药盐酸雷尼替丁胶囊
+:苏州三药盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#苦瓜瘦肉汤
+:苦瓜瘦肉汤 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#苦瓜粥
+:苦瓜粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#苦瓜豆浆汁
+:苦瓜豆浆汁 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#苯丁酸氮芥片
+:苯丁酸氮芥片 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#苹果汁
+:苹果汁 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#荔枝粥
+:荔枝粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#药物治疗
+:药物治疗 rdf:type owl:NamedIndividual ,
+               :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#荸荠粉
+:荸荠粉 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#荸荠粥
+:荸荠粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#莱恩药业呋塞米注射液
+:莱恩药业呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#莱阳司邦得制药盐酸金刚烷胺
+:莱阳司邦得制药盐酸金刚烷胺 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#莲子
+:莲子 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#莼菜虾羹汤
+:莼菜虾羹汤 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#菠菜炒粉丝
+:菠菜炒粉丝 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#菠菜粥
+:菠菜粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#菠菜豆腐汤
+:菠菜豆腐汤 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#蒲地蓝消炎片
+:蒲地蓝消炎片 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#薏仁粥
+:薏仁粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#虚火
+:虚火 rdf:type owl:NamedIndividual ,
+             :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#蛇胆川贝液
+:蛇胆川贝液 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#蜂窝织炎
+:蜂窝织炎 rdf:type owl:NamedIndividual ,
+               :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#蜂蜜
+:蜂蜜 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#螺丝菜
+:螺丝菜 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血常规
+:血常规 rdf:type owl:NamedIndividual ,
+              :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血浆胆固醇水平高
+:血浆胆固醇水平高 rdf:type owl:NamedIndividual ,
+                   :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血涂片
+:血涂片 rdf:type owl:NamedIndividual ,
+              :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血液检查
+:血液检查 rdf:type owl:NamedIndividual ,
+               :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血液生化六项检查
+:血液生化六项检查 rdf:type owl:NamedIndividual ,
+                   :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血液科
+:血液科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :内科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血清学反应
+:血清学反应 rdf:type owl:NamedIndividual ,
+                :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血清总补体
+:血清总补体 rdf:type owl:NamedIndividual ,
+                :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血清补体C5含量
+:血清补体C5含量 rdf:type owl:NamedIndividual ,
+                   :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血管内凝血
+:血管内凝血 rdf:type owl:NamedIndividual ,
+                :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血管炎
+:血管炎 rdf:type owl:NamedIndividual ,
+              :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血管造影
+:血管造影 rdf:type owl:NamedIndividual ,
+               :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#血管镜
+:血管镜 rdf:type owl:NamedIndividual ,
+              :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#衡山药业盐酸金刚烷胺片
+:衡山药业盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#衡山药业盐酸雷尼替丁胶囊
+:衡山药业盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#表情淡漠
+:表情淡漠 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#裕力兴
+:裕力兴 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#裸眼检查法
+:裸眼检查法 rdf:type owl:NamedIndividual ,
+                :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#西南药业氯霉素片
+:西南药业氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#西安利君奥美拉唑肠溶胶囊
+:西安利君奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#西芹洋葱黄豆番茄汤
+:西芹洋葱黄豆番茄汤 rdf:type owl:NamedIndividual ,
+                    :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#西黄丸
+:西黄丸 rdf:type owl:NamedIndividual ,
+              :生产商 ,
+              :药物 ;
+     :生产药品 :西黄丸 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#西黄胶囊
+:西黄胶囊 rdf:type owl:NamedIndividual ,
+               :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#视力
+:视力 rdf:type owl:NamedIndividual ,
+             :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#视网膜血管炎
+:视网膜血管炎 rdf:type owl:NamedIndividual ,
+                 :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#视野检查
+:视野检查 rdf:type owl:NamedIndividual ,
+               :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#角膜映光法
+:角膜映光法 rdf:type owl:NamedIndividual ,
+                :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#角膜炎
+:角膜炎 rdf:type owl:NamedIndividual ,
+              :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#解毒散结胶囊
+:解毒散结胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#言语和语言发育障碍
+:言语和语言发育障碍 rdf:type owl:NamedIndividual ,
+                    :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#语言发育迟缓
+:语言发育迟缓 rdf:type owl:NamedIndividual ,
+                 :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#诺氟沙星胶囊
+:诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#诺迪康威光参志胶囊
+:诺迪康威光参志胶囊 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :参志胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#豆浆
+:豆浆 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#豉椒炒海蟹
+:豉椒炒海蟹 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#豪克盐酸左氧氟沙星胶囊
+:豪克盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#豫西药业氯霉素片
+:豫西药业氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#败血症
+:败血症 rdf:type owl:NamedIndividual ,
+              :疾病 ,
+              :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#贵州汉方药业雷公藤多苷片
+:贵州汉方药业雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#贵州汉方雷公藤多苷片
+:贵州汉方雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#赛乐欣
+:赛乐欣 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#赣南制药氯霉素片
+:赣南制药氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#赤小豆
+:赤小豆 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#赤峰万泽药业醋酸泼尼松片
+:赤峰万泽药业醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#赤峰万泽醋酸泼尼松片
+:赤峰万泽醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#跌打丸
+:跌打丸 rdf:type owl:NamedIndividual ,
+              :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#跌打损伤丸
+:跌打损伤丸 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#辰欣醋酸地塞米松片
+:辰欣醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#辰欣醋酸泼尼松片
+:辰欣醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#辽宁仙草堂西黄丸
+:辽宁仙草堂西黄丸 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :西黄丸 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#辽宁华鑫醋酸地塞米松片
+:辽宁华鑫醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#辽宁富东阿奇霉素分散片
+:辽宁富东阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#辽宁格林醋酸地塞米松片
+:辽宁格林醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#辽宁海思科注射用甲泼尼龙琥
+:辽宁海思科注射用甲泼尼龙琥 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :注射用甲泼尼龙琥珀酸钠 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#进行性痴呆
+:进行性痴呆 rdf:type owl:NamedIndividual ,
+                :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#远大医药氯霉素片
+:远大医药氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#远大医药雷公藤多苷片
+:远大医药雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#远大医药黄石飞云制药雷公藤
+:远大医药黄石飞云制药雷公藤 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :雷公藤多苷片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#迪康长江制药醋酸地塞米松片
+:迪康长江制药醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#迪诺制药奥美拉唑肠溶胶囊
+:迪诺制药奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#通化金马西黄丸
+:通化金马西黄丸 rdf:type owl:NamedIndividual ,
+                  :生产商 ;
+         :生产药品 :西黄丸 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#通宣理肺丸
+:通宣理肺丸 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#逸舒制药盐酸左氧氟沙星胶囊
+:逸舒制药盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#逸舒甘盐酸左氧氟沙星胶囊
+:逸舒甘盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#遂成药业呋塞米注射液
+:遂成药业呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#遂成药业诺氟沙星胶囊
+:遂成药业诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#遂成药业醋酸地塞米松片
+:遂成药业醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#遂成药业醋酸泼尼松片
+:遂成药业醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#遂成药业阿奇霉素分散片
+:遂成药业阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#遗传病科
+:遗传病科 rdf:type owl:NamedIndividual ,
+               :二级科室 ;
+      :属于 :内科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#酚咖片
+:酚咖片 rdf:type owl:NamedIndividual ,
+              :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#酥黄菜
+:酥黄菜 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#酱爆海蟹
+:酱爆海蟹 rdf:type owl:NamedIndividual ,
+               :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#酸奶煮羊排
+:酸奶煮羊排 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#醋酸地塞米松片
+:醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                  :生产商 ,
+                  :药物 ;
+         :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#醋酸泼尼松片
+:醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                 :生产商 ,
+                 :药物 ;
+        :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#重庆东方宁心益智胶囊
+:重庆东方宁心益智胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :宁心益智胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#重庆东方药业宁心益智胶囊
+:重庆东方药业宁心益智胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :宁心益智胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#重庆华邦制药注射用甲泼尼龙
+:重庆华邦制药注射用甲泼尼龙 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :注射用甲泼尼龙琥珀酸钠 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#重庆华邦注射用甲泼尼龙琥珀
+:重庆华邦注射用甲泼尼龙琥珀 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :注射用甲泼尼龙琥珀酸钠 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#重庆科瑞醋酸地塞米松片
+:重庆科瑞醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#重庆科瑞醋酸泼尼松片
+:重庆科瑞醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#重庆迪康长江醋酸地塞米松片
+:重庆迪康长江醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#重庆青阳醋酸地塞米松片
+:重庆青阳醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#金太阳生化氯霉素片
+:金太阳生化氯霉素片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#金奥康
+:金奥康 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#金耀药业呋塞米注射液
+:金耀药业呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#金耀药业注射用甲泼尼龙琥珀
+:金耀药业注射用甲泼尼龙琥珀 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :注射用甲泼尼龙琥珀酸钠 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#金陵浙江天峰呋塞米注射液
+:金陵浙江天峰呋塞米注射液 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#金鼎制药醋酸泼尼松片
+:金鼎制药醋酸泼尼松片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :醋酸泼尼松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#银耳瘦肉羹
+:银耳瘦肉羹 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#银耳百合粥
+:银耳百合粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#银耳绿豆粥
+:银耳绿豆粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#银芩胶囊
+:银芩胶囊 rdf:type owl:NamedIndividual ,
+               :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#锦华药业氯霉素片
+:锦华药业氯霉素片 rdf:type owl:NamedIndividual ,
+                   :生产商 ;
+          :生产药品 :氯霉素片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#锦华药业诺氟沙星胶囊
+:锦华药业诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#门冬氨酸钙口服溶液
+:门冬氨酸钙口服溶液 rdf:type owl:NamedIndividual ,
+                    :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#阿奇霉素分散片
+:阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#阿莫西林克拉维酸钾分散片
+:阿莫西林克拉维酸钾分散片 rdf:type owl:NamedIndividual ,
+                       :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#阿莫西林分散片
+:阿莫西林分散片 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#阿莫西林颗粒
+:阿莫西林颗粒 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#陕西京西呋塞米注射液
+:陕西京西呋塞米注射液 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :呋塞米注射液 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#陕西颐生堂诺氟沙星胶囊
+:陕西颐生堂诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#隆康药业醋酸地塞米松片
+:隆康药业醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#雪菜肉末粥
+:雪菜肉末粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#雷公藤多甙片
+:雷公藤多甙片 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#雷公藤多苷片
+:雷公藤多苷片 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#青豆
+:青豆 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#青阳醋酸地塞米松片
+:青阳醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#青龙醋酸地塞米松片
+:青龙醋酸地塞米松片 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :醋酸地塞米松片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#面肥
+:面肥 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#颅脑CT检查
+:颅脑CT检查 rdf:type owl:NamedIndividual ,
+                 :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#颐生堂诺氟沙星胶囊
+:颐生堂诺氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                    :生产商 ;
+           :生产药品 :诺氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#风油精
+:风油精 rdf:type owl:NamedIndividual ,
+              :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#风湿免疫科
+:风湿免疫科 rdf:type owl:NamedIndividual ,
+                :二级科室 ;
+       :属于 :内科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#食欲不振
+:食欲不振 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#食欲减退
+:食欲减退 rdf:type owl:NamedIndividual ,
+               :症状 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#食管狭窄
+:食管狭窄 rdf:type owl:NamedIndividual ,
+               :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#食管钡餐透视
+:食管钡餐透视 rdf:type owl:NamedIndividual ,
+                 :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#香菇油菜面筋粥
+:香菇油菜面筋粥 rdf:type owl:NamedIndividual ,
+                  :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#香菇粥
+:香菇粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#香菇薏米饭
+:香菇薏米饭 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#香菜莲藕饺
+:香菜莲藕饺 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#香蕉豆沙酸奶汁
+:香蕉豆沙酸奶汁 rdf:type owl:NamedIndividual ,
+                  :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#骨外科
+:骨外科 rdf:type owl:NamedIndividual ,
+              :二级科室 ;
+     :属于 :外科 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#骨松宝胶囊
+:骨松宝胶囊 rdf:type owl:NamedIndividual ,
+                :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#骨炎灵片
+:骨炎灵片 rdf:type owl:NamedIndividual ,
+               :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#骨肽片
+:骨肽片 rdf:type owl:NamedIndividual ,
+              :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鱼肉鸡蛋汤
+:鱼肉鸡蛋汤 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鲁南厚普制药雷公藤多甙片
+:鲁南厚普制药雷公藤多甙片 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :雷公藤多甙片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鲁南厚普雷公藤多甙片
+:鲁南厚普雷公藤多甙片 rdf:type owl:NamedIndividual ,
+                     :生产商 ;
+            :生产药品 :雷公藤多甙片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鲜百合冬菇西兰花汤
+:鲜百合冬菇西兰花汤 rdf:type owl:NamedIndividual ,
+                    :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鲜蘑黄瓜汤
+:鲜蘑黄瓜汤 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鳗鱼粥
+:鳗鱼粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸡心
+:鸡心 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸡肉
+:鸡肉 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸡肝
+:鸡肝 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸡肝粥
+:鸡肝粥 rdf:type owl:NamedIndividual ,
+              :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸡蛋
+:鸡蛋 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸡蛋炒面
+:鸡蛋炒面 rdf:type owl:NamedIndividual ,
+               :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸡蛋米汤粥
+:鸡蛋米汤粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸡蛋黄
+:鸡蛋黄 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸭翅
+:鸭翅 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸭肉
+:鸭肉 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸭肝
+:鸭肝 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸭蛋
+:鸭蛋 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸭血（白鸭）
+:鸭血（白鸭） rdf:type owl:NamedIndividual ,
+                 :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鹅肉
+:鹅肉 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鹏鹞药业奥美拉唑肠溶胶囊
+:鹏鹞药业奥美拉唑肠溶胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :奥美拉唑肠溶胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鹏鹞药业盐酸金刚烷胺片
+:鹏鹞药业盐酸金刚烷胺片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :盐酸金刚烷胺片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鹿瓜多肽注射液
+:鹿瓜多肽注射液 rdf:type owl:NamedIndividual ,
+                  :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鹿肉
+:鹿肉 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#麝香接骨胶囊
+:麝香接骨胶囊 rdf:type owl:NamedIndividual ,
+                 :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#黄河药业盐酸左氧氟沙星胶囊
+:黄河药业盐酸左氧氟沙星胶囊 rdf:type owl:NamedIndividual ,
+                        :生产商 ;
+               :生产药品 :盐酸左氧氟沙星胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#黄河药业盐酸雷尼替丁胶囊
+:黄河药业盐酸雷尼替丁胶囊 rdf:type owl:NamedIndividual ,
+                       :生产商 ;
+              :生产药品 :盐酸雷尼替丁胶囊 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#黄河药业阿奇霉素分散片
+:黄河药业阿奇霉素分散片 rdf:type owl:NamedIndividual ,
+                      :生产商 ;
+             :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#黄瓜拌粉皮
+:黄瓜拌粉皮 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#黄瓜木耳汤
+:黄瓜木耳汤 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#黄疸
+:黄疸 rdf:type owl:NamedIndividual ,
+             :疾病 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#黄豆小米粥
+:黄豆小米粥 rdf:type owl:NamedIndividual ,
+                :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#黄豆芽烧豆泡
+:黄豆芽烧豆泡 rdf:type owl:NamedIndividual ,
+                 :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#黄豆芽蘑菇汤
+:黄豆芽蘑菇汤 rdf:type owl:NamedIndividual ,
+                 :食谱 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#黑芝麻
+:黑芝麻 rdf:type owl:NamedIndividual ,
+              :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#黑豆
+:黑豆 rdf:type owl:NamedIndividual ,
+             :食物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#齐迈星
+:齐迈星 rdf:type owl:NamedIndividual ,
+              :生产商 ;
+     :生产药品 :阿奇霉素分散片 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#1/4分散片
+<http://www.semanticweb.org/hp/ontologies/2022/medical#1/4分散片> rdf:type owl:NamedIndividual ,
+                                                                        :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#8-11
+<http://www.semanticweb.org/hp/ontologies/2022/medical#8-11> rdf:type owl:NamedIndividual ,
+                                                                      :药物 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#抗溶血性链球菌“O”试验
+<http://www.semanticweb.org/hp/ontologies/2022/medical#抗溶血性链球菌“O”试验> rdf:type owl:NamedIndividual ,
+                                                                              :检测手段 .
+
+
+###  http://www.semanticweb.org/hp/ontologies/2022/medical#鸭血(白鸭)
+<http://www.semanticweb.org/hp/ontologies/2022/medical#鸭血(白鸭)> rdf:type owl:NamedIndividual ,
+                                                                        :食物 .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

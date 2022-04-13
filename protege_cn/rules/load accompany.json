@@ -1,0 +1,1 @@
+{"Collections":[{"sheetName":"Sheet1","startColumn":"A","endColumn":"G","startRow":"2","endRow":"+","comment":"","rule":"individual:@A*\nFacts:@B*(ObjectProperty)@C*","active":true},{"sheetName":"Sheet1","startColumn":"A","endColumn":"G","startRow":"2","endRow":"+","comment":"","rule":"individual:@C* Types:@E2","active":true}]}
